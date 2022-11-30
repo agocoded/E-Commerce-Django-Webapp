@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <h1 class="m-5 text-2xl font-bold">👱 Login User</h1>
+
+    <div class="container py-5">
+        <form class="w-2/5 bg-white rounded shadow-md px-8 m-5 pb-8 mb-4 pt-6" method="POST">
+            {% csrf_token %}
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="">Username</label>
+                <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-500 ">
+                    {{form.username}}    
+                </div>
+            </div>
+
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="">Confirm Password</label>
+                <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-500 ">
+                    {{form.password}}    
+                </div>
+            </div>
+
+            <button class="bg-green-500 text-white px-5 py-2 rounded" type="submit">Login</button>
+        </form>
+
+        <div class="px-5 text-lg text-black-700 mt-3">Do not have an account? <a href="{% url 'user:register' %}" class="text-bold text-green-500">Register</a></div>
+    </div>
+{% endblock  %}
+
+

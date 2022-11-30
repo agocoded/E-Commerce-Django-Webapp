@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="grid p-10 lg:grid-cols-3 sm:grid-cols-1 grid-cols-1">
+    <div class="rounded shadow-lg p-5">
+        <div>
+            <img src="{{ user.profile.image.url}}" alt="" class="w-20 h-20">
+        </div>
+
+        <div class="font-bold text-lg px-6 py-2">{{user.username}}</div>
+        <div class="font-bold text-lg px-6 py-2">☎️{{user.profile.phone}}</div>
+    </div>
+</div>
+{% endblock  %}
